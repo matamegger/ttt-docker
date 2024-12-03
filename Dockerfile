@@ -3,26 +3,26 @@ FROM cm2network/steamcmd:root
 
 # Internal Settings
 ENV GMODID=4020 \
-	GMODDIR=/home/steam/gm \
-	CSSID=232330 \
-	CSSDIR=/home/steam/css \
-	TF2ID=232250 \
-	TF2DIR=/home/steam/tf2 \
-	SERVERCFG_DIR=/home/steam/gm/garrysmod/cfg/ \
-	GAMEMODE=terrortown
+    GMODDIR=/home/steam/gm \
+    CSSID=232330 \
+    CSSDIR=/home/steam/css \
+    TF2ID=232250 \
+    TF2DIR=/home/steam/tf2 \
+    SERVERCFG_DIR=/home/steam/gm/garrysmod/cfg/ \
+    GAMEMODE=terrortown
 
 # Environment variables
 ENV HOSTNAME="A TTT Server" \
     GMODPORT=27015 \
     CLIENTPORT=27005 \
-	MAXPLAYERS=20 \
-	GAMEMAP=gm_flatgrass \
-	WORKSHOPID="" \
-	DOWNLOADURL="" \
-	LOADINGURL="" \
-	PASSWORD="" \
-	RCONPASSWORD="" \
-	LOGINTOKEN=""
+    MAXPLAYERS=20 \
+    GAMEMAP=gm_flatgrass \
+    WORKSHOPID="" \
+    DOWNLOADURL="" \
+    LOADINGURL="" \
+    PASSWORD="" \
+    RCONPASSWORD="" \
+    LOGINTOKEN=""
 
 # Add files
 WORKDIR /home/steam/
