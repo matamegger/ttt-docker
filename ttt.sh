@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Update Garry's Mod
-${STEAMCMDDIR}/steamcmd.sh +login anonymous \
-    +force_install_dir ${GMODDIR} +app_update ${GMODID} validate +quit
+${STEAMCMDDIR}/steamcmd.sh \
+    +force_install_dir ${GMODDIR} +login anonymous +app_update ${GMODID} validate +quit
 
 # Update game content
-${STEAMCMDDIR}/steamcmd.sh +login anonymous \
-    +force_install_dir ${CSSDIR} +app_update ${CSSID} validate +quit
+${STEAMCMDDIR}/steamcmd.sh \
+    +force_install_dir ${CSSDIR} +login anonymous +app_update ${CSSID} validate +quit
 if [ ! -z "${TF2DIR}" ]; then
-    ${STEAMCMDDIR}/steamcmd.sh +login anonymous \
-        +force_install_dir ${TF2DIR} +app_update ${TF2ID} validate +quit
+    ${STEAMCMDDIR}/steamcmd.sh \
+        +force_install_dir ${TF2DIR} +login anonymous +app_update ${TF2ID} validate +quit
 else
     sed -i '/force_install_dir ${TF2DIR}/d' /home/steam/updatescript.txt
     sed -i '/app_update ${TF2ID}/d' /home/steam/updatescript.txt
