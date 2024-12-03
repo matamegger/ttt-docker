@@ -8,7 +8,7 @@ ENV GMODID=4020 \
     CSSDIR=/home/steam/css \
     TF2ID=232250 \
     TF2DIR=/home/steam/tf2 \
-    SERVERCFG_DIR=/home/steam/gm/garrysmod/cfg/ \
+    SERVERCFG_DIR=/home/steam/gm/garrysmod/cfg \
     GAMEMODE=terrortown
 
 # Environment variables

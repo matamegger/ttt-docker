@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Update Garry's Mod
 ${STEAMCMDDIR}/steamcmd.sh +login anonymous \
@@ -18,6 +18,7 @@ fi
 echo "gamemode ${GAMEMODE}" >> ${SERVERCFG_DIR}/autoexec.cfg
 
 MOUNT_CONFIG="${SERVERCFG_DIR}/mount.cfg"
+SERVER_CONFIG="${SERVERCFG_DIR}/server.cfg"
 
 # Mount game content
 update_mount() {
@@ -40,15 +41,15 @@ else
 fi
 
 # Update server config file
-touch ${SERVERCFG}
+touch ${SERVER_CONFIG}
 
 update_config() {
     local key="$1"
     local value="$2"
-    if grep -q "^${key}[[:space:]]" "${SERVERCFG_DIR}/server.cfg"; then
-        sed -i "s|^${key}[[:space:]].*|${key} ${value}|" "${SERVERCFG_DIR}/server.cfg"
+    if grep -q "^${key}[[:space:]]" "${SERVER_CONFIG}"; then
+        sed -i "s|^${key}[[:space:]].*|${key} ${value}|" "${SERVER_CONFIG}"
     else
-        echo "${key} ${value}" >> "${SERVERCFG_DIR}/server.cfg"
+        echo "${key} ${value}" >> "${SERVER_CONFIG}"
     fi
 }
 
